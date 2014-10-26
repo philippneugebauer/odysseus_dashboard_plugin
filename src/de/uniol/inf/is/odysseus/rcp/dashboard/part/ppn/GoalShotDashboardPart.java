@@ -43,6 +43,26 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 	private Font titleFont;
 	private String title = "";
 
+	Composite topComposite;
+	Label redTwoThreeQuadrant;
+	Label yellowTwoThreeQuadrant;
+	Label yellowThreeOneQuadrant;
+	Label redThreeOneQuadrant;
+	Label yellowTwoOneQuadrant;
+	Label redTwoOneQuadrant;
+	Label yellowTwoTwoQuadrant;
+	Label redTwoTwoQuadrant;
+	Label yellowOneOneQuadrant;
+	Label redOneOneQuadrant;
+	Label yellowOneTwoQuadrant;
+	Label redOneTwoQuadrant;
+	Label yellowOneThreeQuadrant;
+	Label redOneThreeQuadrant;
+	Label yellowThreeThreeQuadrant;
+	Label redThreeThreeQuadrant;
+	Label yellowThreeTwoQuadrant;
+	Label redThreeTwoQuadrant;
+
 	public String getTitle() {
 		return title;
 	}
@@ -79,7 +99,7 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			}
 
 			Label yellowOneOneQuadrant = new Label(topComposite, SWT.NONE);
-			yellowOneOneQuadrant.setBounds(43, 40, 13, 15);
+			yellowOneOneQuadrant = initializeLabel(yellow, 43, 40, 13, 15);
 			yellowOneOneQuadrant.setText(ZERO);
 			yellowOneOneQuadrant.setForeground(yellow);
 
@@ -96,52 +116,42 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			Label redOneTwoQuadrant = new Label(topComposite, SWT.NONE);
 			redOneTwoQuadrant.setText(ZERO);
 			redOneTwoQuadrant.setForeground(red);
-			redOneTwoQuadrant.setBounds(43, 173, 19, 15);
+			redOneOneQuadrant = initializeLabel(red, 43, 62, 19, 15);
 
 			Label yellowOneThreeQuadrant = new Label(topComposite, SWT.NONE);
 			yellowOneThreeQuadrant.setText(ZERO);
 			yellowOneThreeQuadrant.setForeground(yellow);
-			yellowOneThreeQuadrant.setBounds(43, 272, 13, 15);
+			yellowOneTwoQuadrant = initializeLabel(yellow, 43, 151, 13, 15);
 
 			Label redOneThreeQuadrant = new Label(topComposite, SWT.NONE);
 			redOneThreeQuadrant.setText(ZERO);
 			redOneThreeQuadrant.setForeground(red);
-			redOneThreeQuadrant.setBounds(43, 294, 19, 15);
+			redOneTwoQuadrant = initializeLabel(red, 43, 173, 19, 15);
 
-			Label yellowThreeThreeQuadrant = new Label(topComposite, SWT.NONE);
-			yellowThreeThreeQuadrant.setText(ZERO);
-			yellowThreeThreeQuadrant.setForeground(yellow);
-			yellowThreeThreeQuadrant.setBounds(222, 272, 13, 15);
+			yellowOneThreeQuadrant = initializeLabel(yellow, 43, 272, 13, 15);
 
 			Label redThreeThreeQuadrant = new Label(topComposite, SWT.NONE);
 			redThreeThreeQuadrant.setText(ZERO);
 			redThreeThreeQuadrant.setForeground(red);
-			redThreeThreeQuadrant.setBounds(222, 294, 19, 15);
+			redOneThreeQuadrant = initializeLabel(red, 43, 294, 19, 15);
 
 			Label yellowThreeTwoQuadrant = new Label(topComposite, SWT.NONE);
 			yellowThreeTwoQuadrant.setText(ZERO);
 			yellowThreeTwoQuadrant.setForeground(yellow);
-			yellowThreeTwoQuadrant.setBounds(216, 151, 13, 15);
+			yellowThreeThreeQuadrant = initializeLabel(yellow, 222, 272, 13, 15);
+			redThreeThreeQuadrant = initializeLabel(red, 222, 294, 19, 15);
 
-			Label redThreeTwoQuadrant = new Label(topComposite, SWT.NONE);
-			redThreeTwoQuadrant.setText(ZERO);
-			redThreeTwoQuadrant.setForeground(red);
-			redThreeTwoQuadrant.setBounds(216, 173, 19, 15);
+			yellowThreeTwoQuadrant = initializeLabel(yellow, 216, 151, 13, 15);
+			redThreeTwoQuadrant = initializeLabel(red, 216, 173, 19, 15);
 
-			Label yellowThreeOneQuadrant = new Label(topComposite, SWT.NONE);
-			yellowThreeOneQuadrant.setText(ZERO);
-			yellowThreeOneQuadrant.setForeground(yellow);
-			yellowThreeOneQuadrant.setBounds(216, 40, 13, 15);
+			yellowThreeOneQuadrant = initializeLabel(yellow, 216, 40, 13, 15);
+			redThreeOneQuadrant = initializeLabel(red, 216, 62, 19, 15);
 
-			Label redThreeOneQuadrant = new Label(topComposite, SWT.NONE);
-			redThreeOneQuadrant.setText(ZERO);
-			redThreeOneQuadrant.setForeground(red);
-			redThreeOneQuadrant.setBounds(216, 62, 19, 15);
+			yellowTwoOneQuadrant = initializeLabel(yellow, 128, 40, 13, 15);
+			redTwoOneQuadrant = initializeLabel(red, 128, 62, 19, 15);
 
-			Label yellowTwoOneQuadrant = new Label(topComposite, SWT.NONE);
-			yellowTwoOneQuadrant.setText(ZERO);
-			yellowTwoOneQuadrant.setForeground(yellow);
-			yellowTwoOneQuadrant.setBounds(128, 40, 13, 15);
+			yellowTwoTwoQuadrant = initializeLabel(yellow, 128, 151, 13, 15);
+			redTwoTwoQuadrant = initializeLabel(red, 128, 173, 19, 15);
 
 			Label redTwoOneQuadrant = new Label(topComposite, SWT.NONE);
 			redTwoOneQuadrant.setText(ZERO);
@@ -156,12 +166,12 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			Label redTwoTwoQuadrant = new Label(topComposite, SWT.NONE);
 			redTwoTwoQuadrant.setText(ZERO);
 			redTwoTwoQuadrant.setForeground(red);
-			redTwoTwoQuadrant.setBounds(128, 173, 19, 15);
+			yellowTwoThreeQuadrant = initializeLabel(yellow, 128, 272, 13, 15);
 
 			Label yellowTwoThreeQuadrant = new Label(topComposite, SWT.NONE);
 			yellowTwoThreeQuadrant.setText(ZERO);
 			yellowTwoThreeQuadrant.setForeground(yellow);
-			yellowTwoThreeQuadrant.setBounds(128, 272, 13, 15);
+			redTwoThreeQuadrant = initializeLabel(red, 128, 294, 19, 15);
 
 			Label redTwoThreeQuadrant = new Label(topComposite, SWT.NONE);
 			redTwoThreeQuadrant.setText(ZERO);
@@ -172,10 +182,12 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 		}
 	}
 
-	private Label initializeLabel(Composite topComposite, Color color) {
+	private Label initializeLabel(Color color, int x, int y, int width,
+			int height) {
 		Label label = new Label(topComposite, SWT.NONE);
 		label.setText(ZERO);
 		label.setForeground(color);
+		label.setBounds(x, y, width, height);
 		return label;
 	}
 
