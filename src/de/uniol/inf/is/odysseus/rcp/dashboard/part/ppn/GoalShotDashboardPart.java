@@ -168,7 +168,7 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			redTwoThreeQuadrant.setForeground(red);
 			redTwoThreeQuadrant.setBounds(128, 294, 19, 15);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			// TODO show error message instead?
 		}
 	}
 
