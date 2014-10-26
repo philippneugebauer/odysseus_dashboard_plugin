@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="Dashboard Part Defaults"
+         name="Dashboard Part Defaults"
+         point="de.uniol.inf.is.odysseus.rcp.DashboardPart">
+      <dashboardPart
+            class="de.uniol.inf.is.odysseus.rcp.dashboard.part.TableDashboardPart"
+            configClass="de.uniol.inf.is.odysseus.rcp.dashboard.part.TableConfigurer"
+            name="Table">
+      </dashboardPart>
+      <dashboardPart
+            class="de.uniol.inf.is.odysseus.rcp.dashboard.part.TextDashboardPart"
+            configClass="de.uniol.inf.is.odysseus.rcp.dashboard.part.TextConfigurer"
+            name="Text">
+      </dashboardPart>
+      <dashboardPart
+            class="de.uniol.inf.is.odysseus.rcp.dashboard.part.KeyedTableDashboardPart"
+            configClass="de.uniol.inf.is.odysseus.rcp.dashboard.part.KeyedTableConfigurer"
+            name="KeyedTable">
+      </dashboardPart>
+      <dashboardPart
+            class="de.uniol.inf.is.odysseus.rcp.dashboard.part.datagrid.DataGridDashboardPart"
+            configClass="de.uniol.inf.is.odysseus.rcp.dashboard.part.datagrid.DataGridConfigurer"
+            name="DataGrid">
+      </dashboardPart>
+      <dashboardPart
+            class="de.uniol.inf.is.odysseus.rcp.dashboard.part.ppn.GoalShotDashboardPart"
+            configClass="de.uniol.inf.is.odysseus.rcp.dashboard.part.ppn.GoalShotConfigurer"
+            name="GoalShot">
+      </dashboardPart>
+   </extension>
+
+</plugin>
