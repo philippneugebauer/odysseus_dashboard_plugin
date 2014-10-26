@@ -43,7 +43,7 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 	private Font titleFont;
 	private String title = "";
 
-	Composite topComposite;
+	Composite footballFieldComposite;
 	Label redTwoThreeQuadrant;
 	Label yellowTwoThreeQuadrant;
 	Label yellowThreeOneQuadrant;
@@ -81,63 +81,32 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			final Color red = Display.getCurrent()
 					.getSystemColor(SWT.COLOR_RED);
 
-			Composite topComposite = new Composite(parent, SWT.NONE);
-			GridData gd_footballField = new GridData(SWT.CENTER, SWT.CENTER,
-					true, true, 1, 1);
-			gd_footballField.widthHint = 278;
-			gd_footballField.heightHint = 360;
-			topComposite.setLayoutData(gd_footballField);
-			topComposite.setLayout(null);
-			topComposite.setBackground(Display.getCurrent().getSystemColor(
+			footballFieldComposite = new Composite(parent, SWT.NONE);
+			GridData footballFieldGridData = new GridData(SWT.CENTER,
+					SWT.CENTER, true, true, 1, 1);
+			footballFieldGridData.widthHint = 278;
+			footballFieldGridData.heightHint = 360;
+			footballFieldComposite.setLayoutData(footballFieldGridData);
+			footballFieldComposite.setLayout(null);
+			footballFieldComposite.setBackground(Display.getCurrent().getSystemColor(
 					SWT.COLOR_WHITE));
-			topComposite
+			footballFieldComposite
 					.setBackgroundImage(new Image(Display.getDefault(), is));
-			topComposite.setBackgroundMode(SWT.INHERIT_DEFAULT);
+			footballFieldComposite.setBackgroundMode(SWT.INHERIT_DEFAULT);
 
 			if (!Strings.isNullOrEmpty(title)) {
-				createLabel(topComposite);
+				createLabel(footballFieldComposite);
 			}
 
-			Label yellowOneOneQuadrant = new Label(topComposite, SWT.NONE);
 			yellowOneOneQuadrant = initializeLabel(yellow, 43, 40, 13, 15);
-			yellowOneOneQuadrant.setText(ZERO);
-			yellowOneOneQuadrant.setForeground(yellow);
-
-			Label redOneOneQuadrant = new Label(topComposite, SWT.NONE);
-			redOneOneQuadrant.setText(ZERO);
-			redOneOneQuadrant.setBounds(43, 62, 19, 15);
-			redOneOneQuadrant.setForeground(red);
-
-			Label yellowOneTwoQuadrant = new Label(topComposite, SWT.NONE);
-			yellowOneTwoQuadrant.setText(ZERO);
-			yellowOneTwoQuadrant.setForeground(yellow);
-			yellowOneTwoQuadrant.setBounds(43, 151, 13, 15);
-
-			Label redOneTwoQuadrant = new Label(topComposite, SWT.NONE);
-			redOneTwoQuadrant.setText(ZERO);
-			redOneTwoQuadrant.setForeground(red);
 			redOneOneQuadrant = initializeLabel(red, 43, 62, 19, 15);
 
-			Label yellowOneThreeQuadrant = new Label(topComposite, SWT.NONE);
-			yellowOneThreeQuadrant.setText(ZERO);
-			yellowOneThreeQuadrant.setForeground(yellow);
 			yellowOneTwoQuadrant = initializeLabel(yellow, 43, 151, 13, 15);
-
-			Label redOneThreeQuadrant = new Label(topComposite, SWT.NONE);
-			redOneThreeQuadrant.setText(ZERO);
-			redOneThreeQuadrant.setForeground(red);
 			redOneTwoQuadrant = initializeLabel(red, 43, 173, 19, 15);
 
 			yellowOneThreeQuadrant = initializeLabel(yellow, 43, 272, 13, 15);
-
-			Label redThreeThreeQuadrant = new Label(topComposite, SWT.NONE);
-			redThreeThreeQuadrant.setText(ZERO);
-			redThreeThreeQuadrant.setForeground(red);
 			redOneThreeQuadrant = initializeLabel(red, 43, 294, 19, 15);
 
-			Label yellowThreeTwoQuadrant = new Label(topComposite, SWT.NONE);
-			yellowThreeTwoQuadrant.setText(ZERO);
-			yellowThreeTwoQuadrant.setForeground(yellow);
 			yellowThreeThreeQuadrant = initializeLabel(yellow, 222, 272, 13, 15);
 			redThreeThreeQuadrant = initializeLabel(red, 222, 294, 19, 15);
 
@@ -153,30 +122,8 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			yellowTwoTwoQuadrant = initializeLabel(yellow, 128, 151, 13, 15);
 			redTwoTwoQuadrant = initializeLabel(red, 128, 173, 19, 15);
 
-			Label redTwoOneQuadrant = new Label(topComposite, SWT.NONE);
-			redTwoOneQuadrant.setText(ZERO);
-			redTwoOneQuadrant.setForeground(red);
-			redTwoOneQuadrant.setBounds(128, 62, 19, 15);
-
-			Label yellowTwoTwoQuadrant = new Label(topComposite, SWT.NONE);
-			yellowTwoTwoQuadrant.setText(ZERO);
-			yellowTwoTwoQuadrant.setForeground(yellow);
-			yellowTwoTwoQuadrant.setBounds(128, 151, 13, 15);
-
-			Label redTwoTwoQuadrant = new Label(topComposite, SWT.NONE);
-			redTwoTwoQuadrant.setText(ZERO);
-			redTwoTwoQuadrant.setForeground(red);
 			yellowTwoThreeQuadrant = initializeLabel(yellow, 128, 272, 13, 15);
-
-			Label yellowTwoThreeQuadrant = new Label(topComposite, SWT.NONE);
-			yellowTwoThreeQuadrant.setText(ZERO);
-			yellowTwoThreeQuadrant.setForeground(yellow);
 			redTwoThreeQuadrant = initializeLabel(red, 128, 294, 19, 15);
-
-			Label redTwoThreeQuadrant = new Label(topComposite, SWT.NONE);
-			redTwoThreeQuadrant.setText(ZERO);
-			redTwoThreeQuadrant.setForeground(red);
-			redTwoThreeQuadrant.setBounds(128, 294, 19, 15);
 		} catch (IOException e) {
 			// TODO show error message instead?
 		}
@@ -184,7 +131,7 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 
 	private Label initializeLabel(Color color, int x, int y, int width,
 			int height) {
-		Label label = new Label(topComposite, SWT.NONE);
+		Label label = new Label(footballFieldComposite, SWT.NONE);
 		label.setText(ZERO);
 		label.setForeground(color);
 		label.setBounds(x, y, width, height);
