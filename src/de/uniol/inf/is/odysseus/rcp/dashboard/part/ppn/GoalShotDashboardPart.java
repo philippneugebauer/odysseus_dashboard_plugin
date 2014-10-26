@@ -179,6 +179,15 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 		return label;
 	}
 
+	private void incrementNumber(Label label) {
+		try {
+			int number = Integer.parseInt(label.getText());
+			label.setText(String.valueOf(number + 1));
+		} catch (NumberFormatException e) {
+			// do nothing
+		}
+	}
+
 	private void createLabel(Composite topComposite) {
 		Label label = new Label(topComposite, SWT.BOLD);
 		label.setText(title);
