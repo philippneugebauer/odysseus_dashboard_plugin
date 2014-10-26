@@ -160,8 +160,8 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			yellowTwoThreeQuadrant.setBounds(128, 272, 13, 15);
 
 			Label redTwoThreeQuadrant = new Label(topComposite, SWT.NONE);
-			redTwoTwoQuadrant.setText(ZERO);
-			redTwoTwoQuadrant.setForeground(red);
+			redTwoThreeQuadrant.setText(ZERO);
+			redTwoThreeQuadrant.setForeground(red);
 			redTwoThreeQuadrant.setBounds(128, 294, 19, 15);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
