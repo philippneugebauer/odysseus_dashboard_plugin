@@ -43,8 +43,6 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 	private Font titleFont;
 	private String title = "";
 
-	private Composite footballField;
-
 	public String getTitle() {
 		return title;
 	}
@@ -64,8 +62,14 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 					.getSystemColor(SWT.COLOR_RED);
 
 			Composite topComposite = new Composite(parent, SWT.NONE);
+			GridData gd_footballField = new GridData(SWT.CENTER, SWT.CENTER,
+					true, true, 1, 1);
+			gd_footballField.widthHint = 278;
+			gd_footballField.heightHint = 360;
+			topComposite.setLayoutData(gd_footballField);
 			topComposite.setLayout(null);
-			topComposite.setBounds(0, 0, width, height);
+			topComposite.setBackground(Display.getCurrent().getSystemColor(
+					SWT.COLOR_WHITE));
 			topComposite
 					.setBackgroundImage(new Image(Display.getDefault(), is));
 			topComposite.setBackgroundMode(SWT.INHERIT_DEFAULT);
