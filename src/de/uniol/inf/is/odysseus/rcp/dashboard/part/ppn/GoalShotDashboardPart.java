@@ -36,8 +36,6 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			.getLogger(GoalShotDashboardPart.class);
 	private static final String ZERO = "0";
 
-	private boolean refreshing = false;
-
 	private final List<Tuple<?>> data = Lists.newArrayList();
 
 	private Font titleFont;
@@ -88,10 +86,10 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			footballFieldGridData.heightHint = 360;
 			footballFieldComposite.setLayoutData(footballFieldGridData);
 			footballFieldComposite.setLayout(null);
-			footballFieldComposite.setBackground(Display.getCurrent().getSystemColor(
-					SWT.COLOR_WHITE));
-			footballFieldComposite
-					.setBackgroundImage(new Image(Display.getDefault(), is));
+			footballFieldComposite.setBackground(Display.getCurrent()
+					.getSystemColor(SWT.COLOR_WHITE));
+			footballFieldComposite.setBackgroundImage(new Image(Display
+					.getDefault(), is));
 			footballFieldComposite.setBackgroundMode(SWT.INHERIT_DEFAULT);
 
 			if (!Strings.isNullOrEmpty(title)) {
@@ -193,35 +191,6 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 		if (physicalRoots.size() > 1) {
 			LOG.warn("GoalShotDashboardPart supports only one query!");
 		}
-
-		// final int colCount = 0;
-		// for (int i = 0; i < colCount; i++) {
-		//
-		// final int finalI = i;
-
-		// final TableViewerColumn fileNameColumn = new TableViewerColumn(
-		// tableViewer, SWT.NONE);
-		// fileNameColumn.getColumn().setText(attributes[i]);
-		// footballFieldLayout.setColumnData(fileNameColumn.getColumn(),
-		// new ColumnWeightData(5, 25, true));
-		// fileNameColumn.setLabelProvider(new CellLabelProvider() {
-		// @Override
-		// public void update(ViewerCell cell) {
-		// final Tuple<?> tuple = (Tuple<?>) cell.getElement();
-		// final Object attrValue =
-		// tuple.getAttributes()[positions[finalI]];
-		// cell.setText(attrValue != null ? attrValue.toString()
-		// : "null");
-		// }
-		// });
-		// }
-
-		// tableViewer.setContentProvider(ArrayContentProvider.getInstance());
-		// tableViewer.setInput(data);
-		// tableViewer.refresh();
-		// tableViewer.getTable().redraw();
-		//
-		// tableComposite.layout();
 	}
 
 	@Override
@@ -244,21 +213,6 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 				data.add(0, (Tuple<?>) element);
 			}
 
-			// if (!refreshing && tableViewer.getInput() != null) {
-			// refreshing = true;
-			// PlatformUI.getWorkbench().getDisplay()
-			// .asyncExec(new Runnable() {
-			// @Override
-			// public void run() {
-			// synchronized (data) {
-			// if (!tableViewer.getTable().isDisposed()) {
-			// tableViewer.refresh();
-			// }
-			// refreshing = false;
-			// }
-			// }
-			// });
-			// }
 		}
 	}
 
