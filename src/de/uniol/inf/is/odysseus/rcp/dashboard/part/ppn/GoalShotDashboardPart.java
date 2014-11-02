@@ -3,6 +3,7 @@ package de.uniol.inf.is.odysseus.rcp.dashboard.part.ppn;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -43,15 +44,8 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 	private String title = "";
 
 	Composite footballFieldComposite;
-	Label redTwoThreeQuadrant;
-	Label redThreeOneQuadrant;
-	Label redTwoOneQuadrant;
-	Label redTwoTwoQuadrant;
-	Label redOneOneQuadrant;
-	Label redOneTwoQuadrant;
-	Label redOneThreeQuadrant;
-	Label redThreeThreeQuadrant;
-	Label redThreeTwoQuadrant;
+	List<GoalShotArea> leftHalf;
+	List<GoalShotArea> rightHalf;
 
 	public String getTitle() {
 		return title;
@@ -88,51 +82,71 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 				createLabel(footballFieldComposite);
 			}
 
+			leftHalf = new ArrayList<>();
+			rightHalf = new ArrayList<>();
+
 			GoalShotArea yellowOneOneArea = new GoalShotArea(-50, -33960,
 					17463, -22633, initializeLabel(yellow, 43, 40, 13, 15));
-			// TODO!!
+			leftHalf.add(yellowOneOneArea);
 			GoalShotArea redOneOneArea = new GoalShotArea(-50, 0, 8707, 11322,
 					initializeLabel(red, 43, 62, 19, 15));
+			rightHalf.add(redOneOneArea);
 
 			GoalShotArea yellowOneTwoArea = new GoalShotArea(17463, -33960,
 					34976, -22633, initializeLabel(yellow, 43, 151, 13, 15));
+			leftHalf.add(yellowOneTwoArea);
 			GoalShotArea redOneTwoArea = new GoalShotArea(17463, 0, 34976,
 					11322, initializeLabel(red, 43, 173, 19, 15));
+			rightHalf.add(redOneTwoArea);
 
 			GoalShotArea yellowOneThreeArea = new GoalShotArea(34976, -33960,
 					52489, -22633, initializeLabel(yellow, 43, 272, 13, 15));
+			leftHalf.add(yellowOneThreeArea);
 			GoalShotArea redOneThreeArea = new GoalShotArea(34976, 0, 52489,
 					11322, initializeLabel(red, 43, 294, 19, 15));
+			rightHalf.add(redOneThreeArea);
 
 			GoalShotArea yellowTwoOneArea = new GoalShotArea(-50, -22633,
 					17463, -11317, initializeLabel(yellow, 128, 40, 13, 15));
+			leftHalf.add(yellowTwoOneArea);
 			GoalShotArea redTwoOneArea = new GoalShotArea(-50, 11322, 17463,
 					22644, initializeLabel(red, 128, 62, 19, 15));
+			rightHalf.add(redTwoOneArea);
 
 			GoalShotArea yellowTwoTwoArea = new GoalShotArea(17463, -22633,
 					34976, -11317, initializeLabel(yellow, 128, 151, 13, 15));
+			leftHalf.add(yellowTwoTwoArea);
 			GoalShotArea redTwoTwoArea = new GoalShotArea(17463, 11322, 34976,
 					22644, initializeLabel(red, 128, 173, 19, 15));
+			rightHalf.add(redTwoTwoArea);
 
 			GoalShotArea yellowTwoThreeArea = new GoalShotArea(34976, -22633,
 					52489, -11317, initializeLabel(yellow, 128, 272, 13, 15));
+			leftHalf.add(yellowTwoThreeArea);
 			GoalShotArea redTwoThreeArea = new GoalShotArea(34976, 11322,
 					52489, 22644, initializeLabel(red, 128, 294, 19, 15));
+			rightHalf.add(redTwoThreeArea);
 
 			GoalShotArea yellowThreeOneArea = new GoalShotArea(-50, -11317,
 					17463, 0, initializeLabel(yellow, 216, 40, 13, 15));
+			leftHalf.add(yellowThreeOneArea);
 			GoalShotArea redThreeOneArea = new GoalShotArea(-50, 22644, 17463,
 					33965, initializeLabel(red, 216, 62, 19, 15));
+			rightHalf.add(redThreeOneArea);
 
 			GoalShotArea yellowThreeTwoArea = new GoalShotArea(17463, -11317,
 					34976, 0, initializeLabel(yellow, 216, 151, 13, 15));
+			leftHalf.add(yellowThreeTwoArea);
 			GoalShotArea redThreeTwoArea = new GoalShotArea(17463, 22644,
 					34976, 33965, initializeLabel(red, 216, 173, 19, 15));
+			rightHalf.add(redThreeTwoArea);
 
 			GoalShotArea yellowThreeThreeArea = new GoalShotArea(34976, -11317,
 					52489, 0, initializeLabel(yellow, 222, 272, 13, 15));
+			leftHalf.add(yellowThreeThreeArea);
 			GoalShotArea redThreeThreeArea = new GoalShotArea(34976, 22644,
 					52489, 33965, initializeLabel(red, 222, 294, 19, 15));
+			rightHalf.add(redThreeThreeArea);
 		} catch (IOException e) {
 			// TODO show error message instead?
 		}
