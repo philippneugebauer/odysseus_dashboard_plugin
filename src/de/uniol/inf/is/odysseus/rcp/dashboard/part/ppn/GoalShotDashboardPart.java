@@ -2,6 +2,7 @@ package de.uniol.inf.is.odysseus.rcp.dashboard.part.ppn;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -43,22 +44,13 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 
 	Composite footballFieldComposite;
 	Label redTwoThreeQuadrant;
-	Label yellowTwoThreeQuadrant;
-	Label yellowThreeOneQuadrant;
 	Label redThreeOneQuadrant;
-	Label yellowTwoOneQuadrant;
 	Label redTwoOneQuadrant;
-	Label yellowTwoTwoQuadrant;
 	Label redTwoTwoQuadrant;
-	Label yellowOneOneQuadrant;
 	Label redOneOneQuadrant;
-	Label yellowOneTwoQuadrant;
 	Label redOneTwoQuadrant;
-	Label yellowOneThreeQuadrant;
 	Label redOneThreeQuadrant;
-	Label yellowThreeThreeQuadrant;
 	Label redThreeThreeQuadrant;
-	Label yellowThreeTwoQuadrant;
 	Label redThreeTwoQuadrant;
 
 	public String getTitle() {
@@ -96,32 +88,43 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 				createLabel(footballFieldComposite);
 			}
 
-			yellowOneOneQuadrant = initializeLabel(yellow, 43, 40, 13, 15);
-			redOneOneQuadrant = initializeLabel(red, 43, 62, 19, 15);
+			GoalShotArea yellowOneOneArea = new GoalShotArea(-50, -33960,
+					17463, -22633, initializeLabel(yellow, 43, 40, 13, 15));
+			// TODO!!
+			GoalShotArea redOneOneArea = new GoalShotArea(-50, -33960, 8707,
+					-22633, initializeLabel(red, 43, 62, 19, 15));
 
-			yellowOneTwoQuadrant = initializeLabel(yellow, 43, 151, 13, 15);
+			GoalShotArea yellowOneTwoArea = new GoalShotArea(17463, -33960,
+					34976, -22633, initializeLabel(yellow, 43, 151, 13, 15));
 			redOneTwoQuadrant = initializeLabel(red, 43, 173, 19, 15);
 
-			yellowOneThreeQuadrant = initializeLabel(yellow, 43, 272, 13, 15);
+			GoalShotArea yellowOneThreeArea = new GoalShotArea(34976, -33960,
+					52489, -22633, initializeLabel(yellow, 43, 272, 13, 15));
 			redOneThreeQuadrant = initializeLabel(red, 43, 294, 19, 15);
 
-			yellowThreeThreeQuadrant = initializeLabel(yellow, 222, 272, 13, 15);
-			redThreeThreeQuadrant = initializeLabel(red, 222, 294, 19, 15);
-
-			yellowThreeTwoQuadrant = initializeLabel(yellow, 216, 151, 13, 15);
-			redThreeTwoQuadrant = initializeLabel(red, 216, 173, 19, 15);
-
-			yellowThreeOneQuadrant = initializeLabel(yellow, 216, 40, 13, 15);
-			redThreeOneQuadrant = initializeLabel(red, 216, 62, 19, 15);
-
-			yellowTwoOneQuadrant = initializeLabel(yellow, 128, 40, 13, 15);
+			GoalShotArea yellowTwoOneArea = new GoalShotArea(-50, -22633,
+					17463, -11317, initializeLabel(yellow, 128, 40, 13, 15));
 			redTwoOneQuadrant = initializeLabel(red, 128, 62, 19, 15);
 
-			yellowTwoTwoQuadrant = initializeLabel(yellow, 128, 151, 13, 15);
+			GoalShotArea yellowTwoTwoArea = new GoalShotArea(17463, -22633,
+					34976, -11317, initializeLabel(yellow, 128, 151, 13, 15));
 			redTwoTwoQuadrant = initializeLabel(red, 128, 173, 19, 15);
 
-			yellowTwoThreeQuadrant = initializeLabel(yellow, 128, 272, 13, 15);
+			GoalShotArea yellowTwoThreeArea = new GoalShotArea(34976, -22633,
+					52489, -11317, initializeLabel(yellow, 128, 272, 13, 15));
 			redTwoThreeQuadrant = initializeLabel(red, 128, 294, 19, 15);
+
+			GoalShotArea yellowThreeOneArea = new GoalShotArea(-50, -11317,
+					17463, 0, initializeLabel(yellow, 216, 40, 13, 15));
+			redThreeOneQuadrant = initializeLabel(red, 216, 62, 19, 15);
+
+			GoalShotArea yellowThreeTwoArea = new GoalShotArea(17463, -11317,
+					34976, 0, initializeLabel(yellow, 216, 151, 13, 15));
+			redThreeTwoQuadrant = initializeLabel(red, 216, 173, 19, 15);
+
+			GoalShotArea yellowThreeThreeArea = new GoalShotArea(34976, -11317,
+					52489, 0, initializeLabel(yellow, 222, 272, 13, 15));
+			redThreeThreeQuadrant = initializeLabel(red, 222, 294, 19, 15);
 		} catch (IOException e) {
 			// TODO show error message instead?
 		}
@@ -134,15 +137,6 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 		label.setForeground(color);
 		label.setBounds(x, y, width, height);
 		return label;
-	}
-
-	private void incrementNumber(Label label) {
-		try {
-			int number = Integer.parseInt(label.getText());
-			label.setText(String.valueOf(number + 1));
-		} catch (NumberFormatException e) {
-			// do nothing
-		}
 	}
 
 	private void createLabel(Composite topComposite) {
@@ -209,11 +203,11 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 	public void streamElementRecieved(IPhysicalOperator senderOperator,
 			IStreamObject<?> element, int port) {
 		if (element != null) {
+			Serializable teamId = element.getAdditionalContent("team_id");
+
 			synchronized (data) {
 				data.add(0, (Tuple<?>) element);
 			}
-
 		}
 	}
-
 }
