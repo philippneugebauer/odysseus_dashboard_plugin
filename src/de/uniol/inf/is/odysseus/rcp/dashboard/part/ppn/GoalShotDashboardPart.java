@@ -91,40 +91,48 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			GoalShotArea yellowOneOneArea = new GoalShotArea(-50, -33960,
 					17463, -22633, initializeLabel(yellow, 43, 40, 13, 15));
 			// TODO!!
-			GoalShotArea redOneOneArea = new GoalShotArea(-50, -33960, 8707,
-					-22633, initializeLabel(red, 43, 62, 19, 15));
+			GoalShotArea redOneOneArea = new GoalShotArea(-50, 0, 8707, 11322,
+					initializeLabel(red, 43, 62, 19, 15));
 
 			GoalShotArea yellowOneTwoArea = new GoalShotArea(17463, -33960,
 					34976, -22633, initializeLabel(yellow, 43, 151, 13, 15));
-			redOneTwoQuadrant = initializeLabel(red, 43, 173, 19, 15);
+			GoalShotArea redOneTwoArea = new GoalShotArea(17463, 0, 34976,
+					11322, initializeLabel(red, 43, 173, 19, 15));
 
 			GoalShotArea yellowOneThreeArea = new GoalShotArea(34976, -33960,
 					52489, -22633, initializeLabel(yellow, 43, 272, 13, 15));
-			redOneThreeQuadrant = initializeLabel(red, 43, 294, 19, 15);
+			GoalShotArea redOneThreeArea = new GoalShotArea(34976, 0, 52489,
+					11322, initializeLabel(red, 43, 294, 19, 15));
 
 			GoalShotArea yellowTwoOneArea = new GoalShotArea(-50, -22633,
 					17463, -11317, initializeLabel(yellow, 128, 40, 13, 15));
-			redTwoOneQuadrant = initializeLabel(red, 128, 62, 19, 15);
+			GoalShotArea redTwoOneArea = new GoalShotArea(-50, 11322, 17463,
+					22644, initializeLabel(red, 128, 62, 19, 15));
 
 			GoalShotArea yellowTwoTwoArea = new GoalShotArea(17463, -22633,
 					34976, -11317, initializeLabel(yellow, 128, 151, 13, 15));
-			redTwoTwoQuadrant = initializeLabel(red, 128, 173, 19, 15);
+			GoalShotArea redTwoTwoArea = new GoalShotArea(17463, 11322, 34976,
+					22644, initializeLabel(red, 128, 173, 19, 15));
 
 			GoalShotArea yellowTwoThreeArea = new GoalShotArea(34976, -22633,
 					52489, -11317, initializeLabel(yellow, 128, 272, 13, 15));
-			redTwoThreeQuadrant = initializeLabel(red, 128, 294, 19, 15);
+			GoalShotArea redTwoThreeArea = new GoalShotArea(34976, 11322,
+					52489, 22644, initializeLabel(red, 128, 294, 19, 15));
 
 			GoalShotArea yellowThreeOneArea = new GoalShotArea(-50, -11317,
 					17463, 0, initializeLabel(yellow, 216, 40, 13, 15));
-			redThreeOneQuadrant = initializeLabel(red, 216, 62, 19, 15);
+			GoalShotArea redThreeOneArea = new GoalShotArea(-50, 22644, 17463,
+					33965, initializeLabel(red, 216, 62, 19, 15));
 
 			GoalShotArea yellowThreeTwoArea = new GoalShotArea(17463, -11317,
 					34976, 0, initializeLabel(yellow, 216, 151, 13, 15));
-			redThreeTwoQuadrant = initializeLabel(red, 216, 173, 19, 15);
+			GoalShotArea redThreeTwoArea = new GoalShotArea(17463, 22644,
+					34976, 33965, initializeLabel(red, 216, 173, 19, 15));
 
 			GoalShotArea yellowThreeThreeArea = new GoalShotArea(34976, -11317,
 					52489, 0, initializeLabel(yellow, 222, 272, 13, 15));
-			redThreeThreeQuadrant = initializeLabel(red, 222, 294, 19, 15);
+			GoalShotArea redThreeThreeArea = new GoalShotArea(34976, 22644,
+					52489, 33965, initializeLabel(red, 222, 294, 19, 15));
 		} catch (IOException e) {
 			// TODO show error message instead?
 		}
