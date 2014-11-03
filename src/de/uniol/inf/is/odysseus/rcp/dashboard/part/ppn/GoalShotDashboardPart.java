@@ -2,7 +2,6 @@ package de.uniol.inf.is.odysseus.rcp.dashboard.part.ppn;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -22,7 +21,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Strings;
-import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
 import de.uniol.inf.is.odysseus.core.collection.Tuple;
@@ -38,14 +36,16 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			.getLogger(GoalShotDashboardPart.class);
 	private static final String ZERO = "0";
 
-	private final List<Tuple<?>> data = Lists.newArrayList();
-
 	private Font titleFont;
 	private String title = "";
 
 	Composite footballFieldComposite;
+	Object leftHalfLockObject = new Object();
+	Object rightHalfLockObject = new Object();
 	List<GoalShotArea> leftHalf;
 	List<GoalShotArea> rightHalf;
+
+	boolean sidesChanged;
 
 	public String getTitle() {
 		return title;
