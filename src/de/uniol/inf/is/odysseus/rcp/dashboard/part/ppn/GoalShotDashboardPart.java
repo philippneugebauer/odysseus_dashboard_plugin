@@ -225,15 +225,13 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 	public void streamElementRecieved(IPhysicalOperator senderOperator,
 			IStreamObject<?> element, int port) {
 		if (element != null && element instanceof Tuple<?>) {
-			for (String key : element.getAdditionalContent().keySet()) {
-				LOG.debug(key
-						+ element.getAdditionalContent().get(key).toString());
-			}
+			Tuple<?> tuple = (Tuple<?>) element;
 
-			// TODO: get values from element
-			int x = 0;
-			int y = 0;
-			int time = 0;
+			// TODO: adapt for query changes
+			int x = (int) tuple.getAttribute(6);
+			int y = (int) tuple.getAttribute(7);
+			int time = (int) tuple.getAttribute(0);
+
 			if (!sidesChanged && time > 30) {
 				halftimeChange();
 				sidesChanged = true;
