@@ -85,68 +85,68 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			leftHalf = new ArrayList<>();
 			rightHalf = new ArrayList<>();
 
-			GoalShotArea yellowOneOneArea = new GoalShotArea(-50, -33960,
-					17463, -22633, initializeLabel(yellow, 43, 40, 13, 15));
-			leftHalf.add(yellowOneOneArea);
-			GoalShotArea redOneOneArea = new GoalShotArea(-50, 22644, 17463,
-					33965, initializeLabel(red, 216, 62, 19, 15));
-			rightHalf.add(redOneOneArea);
+			GoalShotArea redOneOneArea = new GoalShotArea(-50, -33960, 17463,
+					-22633, initializeLabel(red, 43, 40, 13, 15));
+			leftHalf.add(redOneOneArea);
+			GoalShotArea yellowOneOneArea = new GoalShotArea(-50, 22644, 17463,
+					33965, initializeLabel(yellow, 216, 62, 19, 15));
+			rightHalf.add(yellowOneOneArea);
 
-			GoalShotArea yellowOneTwoArea = new GoalShotArea(17463, -33960,
-					34976, -22633, initializeLabel(yellow, 43, 151, 13, 15));
-			leftHalf.add(yellowOneTwoArea);
-			GoalShotArea redOneTwoArea = new GoalShotArea(17463, 22644, 34976,
-					33965, initializeLabel(red, 216, 173, 19, 15));
-			rightHalf.add(redOneTwoArea);
+			GoalShotArea redOneTwoArea = new GoalShotArea(17463, -33960, 34976,
+					-22633, initializeLabel(red, 43, 151, 13, 15));
+			leftHalf.add(redOneTwoArea);
+			GoalShotArea yellowOneTwoArea = new GoalShotArea(17463, 22644,
+					34976, 33965, initializeLabel(yellow, 216, 173, 19, 15));
+			rightHalf.add(yellowOneTwoArea);
 
-			GoalShotArea yellowOneThreeArea = new GoalShotArea(34976, -33960,
-					52489, -22633, initializeLabel(yellow, 43, 272, 13, 15));
-			leftHalf.add(yellowOneThreeArea);
-			GoalShotArea redOneThreeArea = new GoalShotArea(34976, 22644,
-					52489, 33965, initializeLabel(red, 222, 294, 19, 15));
-			rightHalf.add(redOneThreeArea);
+			GoalShotArea redOneThreeArea = new GoalShotArea(34976, -33960,
+					52489, -22633, initializeLabel(red, 43, 272, 13, 15));
+			leftHalf.add(redOneThreeArea);
+			GoalShotArea yellowOneThreeArea = new GoalShotArea(34976, 22644,
+					52489, 33965, initializeLabel(yellow, 222, 294, 19, 15));
+			rightHalf.add(yellowOneThreeArea);
 
-			GoalShotArea yellowTwoOneArea = new GoalShotArea(-50, -22633,
-					17463, -11317, initializeLabel(yellow, 128, 40, 13, 15));
-			leftHalf.add(yellowTwoOneArea);
-			GoalShotArea redTwoOneArea = new GoalShotArea(-50, 11322, 17463,
-					22644, initializeLabel(red, 128, 62, 19, 15));
-			rightHalf.add(redTwoOneArea);
+			GoalShotArea redTwoOneArea = new GoalShotArea(-50, -22633, 17463,
+					-11317, initializeLabel(red, 128, 40, 13, 15));
+			leftHalf.add(redTwoOneArea);
+			GoalShotArea yellowTwoOneArea = new GoalShotArea(-50, 11322, 17463,
+					22644, initializeLabel(yellow, 128, 62, 19, 15));
+			rightHalf.add(yellowTwoOneArea);
 
-			GoalShotArea yellowTwoTwoArea = new GoalShotArea(17463, -22633,
-					34976, -11317, initializeLabel(yellow, 128, 151, 13, 15));
-			leftHalf.add(yellowTwoTwoArea);
-			GoalShotArea redTwoTwoArea = new GoalShotArea(17463, 11322, 34976,
-					22644, initializeLabel(red, 128, 173, 19, 15));
-			rightHalf.add(redTwoTwoArea);
+			GoalShotArea redTwoTwoArea = new GoalShotArea(17463, -22633, 34976,
+					-11317, initializeLabel(red, 128, 151, 13, 15));
+			leftHalf.add(redTwoTwoArea);
+			GoalShotArea yellowTwoTwoArea = new GoalShotArea(17463, 11322,
+					34976, 22644, initializeLabel(yellow, 128, 173, 19, 15));
+			rightHalf.add(yellowTwoTwoArea);
 
-			GoalShotArea yellowTwoThreeArea = new GoalShotArea(34976, -22633,
-					52489, -11317, initializeLabel(yellow, 128, 272, 13, 15));
-			leftHalf.add(yellowTwoThreeArea);
-			GoalShotArea redTwoThreeArea = new GoalShotArea(34976, 11322,
-					52489, 22644, initializeLabel(red, 128, 294, 19, 15));
-			rightHalf.add(redTwoThreeArea);
+			GoalShotArea redTwoThreeArea = new GoalShotArea(34976, -22633,
+					52489, -11317, initializeLabel(red, 128, 272, 13, 15));
+			leftHalf.add(redTwoThreeArea);
+			GoalShotArea yellowTwoThreeArea = new GoalShotArea(34976, 11322,
+					52489, 22644, initializeLabel(yellow, 128, 294, 19, 15));
+			rightHalf.add(yellowTwoThreeArea);
 
-			GoalShotArea yellowThreeOneArea = new GoalShotArea(-50, -11317,
-					17463, 0, initializeLabel(yellow, 216, 40, 13, 15));
-			leftHalf.add(yellowThreeOneArea);
-			GoalShotArea redThreeOneArea = new GoalShotArea(-50, 0, 8707,
-					11322, initializeLabel(red, 43, 62, 19, 15));
-			rightHalf.add(redThreeOneArea);
+			GoalShotArea redThreeOneArea = new GoalShotArea(-50, -11317, 17463,
+					0, initializeLabel(red, 216, 40, 13, 15));
+			leftHalf.add(redThreeOneArea);
+			GoalShotArea yellowThreeOneArea = new GoalShotArea(-50, 0, 8707,
+					11322, initializeLabel(yellow, 43, 62, 19, 15));
+			rightHalf.add(yellowThreeOneArea);
 
-			GoalShotArea yellowThreeTwoArea = new GoalShotArea(17463, -11317,
-					34976, 0, initializeLabel(yellow, 216, 151, 13, 15));
-			leftHalf.add(yellowThreeTwoArea);
-			GoalShotArea redThreeTwoArea = new GoalShotArea(17463, 0, 34976,
-					11322, initializeLabel(red, 43, 173, 19, 15));
-			rightHalf.add(redThreeTwoArea);
+			GoalShotArea redThreeTwoArea = new GoalShotArea(17463, -11317,
+					34976, 0, initializeLabel(red, 216, 151, 13, 15));
+			leftHalf.add(redThreeTwoArea);
+			GoalShotArea yellowThreeTwoArea = new GoalShotArea(17463, 0, 34976,
+					11322, initializeLabel(yellow, 43, 173, 19, 15));
+			rightHalf.add(yellowThreeTwoArea);
 
-			GoalShotArea yellowThreeThreeArea = new GoalShotArea(34976, -11317,
-					52489, 0, initializeLabel(yellow, 222, 272, 13, 15));
-			leftHalf.add(yellowThreeThreeArea);
-			GoalShotArea redThreeThreeArea = new GoalShotArea(34976, 0, 52489,
-					11322, initializeLabel(red, 43, 294, 19, 15));
-			rightHalf.add(redThreeThreeArea);
+			GoalShotArea redThreeThreeArea = new GoalShotArea(34976, -11317,
+					52489, 0, initializeLabel(red, 222, 272, 13, 15));
+			leftHalf.add(redThreeThreeArea);
+			GoalShotArea yellowThreeThreeArea = new GoalShotArea(34976, 0,
+					52489, 11322, initializeLabel(yellow, 43, 294, 19, 15));
+			rightHalf.add(yellowThreeThreeArea);
 		} catch (IOException e) {
 			// TODO show error message instead?
 		}
