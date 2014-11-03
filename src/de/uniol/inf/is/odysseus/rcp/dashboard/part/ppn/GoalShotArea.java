@@ -18,6 +18,14 @@ public class GoalShotArea {
 		this.numberLabel = label;
 	}
 
+	public Label getNumberLabel() {
+		return numberLabel;
+	}
+
+	public void setNumberLabel(Label label) {
+		this.numberLabel = label;
+	}
+
 	public boolean isInsideAndIncrement(int x, int y) {
 		boolean isInside = startX <= x && endX > x && startY <= y && endY > y;
 		if (isInside) {
