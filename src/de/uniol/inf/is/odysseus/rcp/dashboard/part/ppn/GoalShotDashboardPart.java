@@ -238,11 +238,11 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			}
 
 			if (y >= 0) {
-				synchronized (leftHalfLockObject) {
+				synchronized (rightHalfLockObject) {
 					handleLeftHalf(x, y);
 				}
 			} else {
-				synchronized (rightHalfLockObject) {
+				synchronized (leftHalfLockObject) {
 					handleRightHalf(x, y);
 				}
 			}
