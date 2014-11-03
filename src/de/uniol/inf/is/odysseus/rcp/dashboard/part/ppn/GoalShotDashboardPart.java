@@ -224,8 +224,32 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 	@Override
 	public void streamElementRecieved(IPhysicalOperator senderOperator,
 			IStreamObject<?> element, int port) {
-		if (element != null) {
-			Serializable teamId = element.getAdditionalContent("team_id");
+		if (element != null && element instanceof Tuple<?>) {
+			for (String key : element.getAdditionalContent().keySet()) {
+				LOG.debug(key
+						+ element.getAdditionalContent().get(key).toString());
+			}
+
+			// TODO: get values from element
+			int x = 0;
+			int y = 0;
+			int time = 0;
+			if (!sidesChanged && time > 30) {
+				halftimeChange();
+				sidesChanged = true;
+			}
+
+			if (y >= 0) {
+				synchronized (leftHalfLockObject) {
+					handleLeftHalf(x, y);
+				}
+			} else {
+				synchronized (rightHalfLockObject) {
+					handleRightHalf(x, y);
+				}
+			}
+		}
+	}
 
 			synchronized (data) {
 				data.add(0, (Tuple<?>) element);
