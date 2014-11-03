@@ -251,8 +251,19 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 		}
 	}
 
-			synchronized (data) {
-				data.add(0, (Tuple<?>) element);
+	private void handleLeftHalf(int x, int y) {
+		iterateOverListAndCheckMatch(leftHalf, x, y);
+	}
+
+	private void handleRightHalf(int x, int y) {
+		iterateOverListAndCheckMatch(rightHalf, x, y);
+	}
+
+	private void iterateOverListAndCheckMatch(List<GoalShotArea> list, int x,
+			int y) {
+		for (GoalShotArea area : list) {
+			if (area.isInsideAndIncrement(x, y)) {
+				break;
 			}
 		}
 	}
