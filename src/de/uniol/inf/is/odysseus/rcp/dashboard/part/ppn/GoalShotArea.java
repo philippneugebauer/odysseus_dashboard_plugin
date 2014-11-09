@@ -42,5 +42,4 @@ public class GoalShotArea {
 			// do nothing
 		}
 	}
-
 }

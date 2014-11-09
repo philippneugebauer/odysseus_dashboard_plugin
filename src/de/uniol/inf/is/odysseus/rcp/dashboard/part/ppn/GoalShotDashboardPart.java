@@ -164,10 +164,7 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 	private void createLabel(Composite topComposite) {
 		Label label = new Label(topComposite, SWT.BOLD);
 		label.setText(title);
-		label.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		label.setAlignment(SWT.CENTER);
-		label.setBackground(Display.getCurrent()
-				.getSystemColor(SWT.COLOR_WHITE));
+		label.setBounds(112, 10, 100, 20);
 
 		titleFont = createBoldFont(label.getFont());
 		label.setFont(titleFont);
