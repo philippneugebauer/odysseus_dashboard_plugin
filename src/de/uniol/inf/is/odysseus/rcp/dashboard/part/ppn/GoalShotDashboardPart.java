@@ -228,11 +228,15 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			// TODO: adapt for query changes
 			final int x = (int) tuple.getAttribute(1);
 			final int y = (int) tuple.getAttribute(2);
-			int time = (int) tuple.getAttribute(0);
+			final int time = (int) tuple.getAttribute(0);
 
-			if (!sidesChanged && time > 30) {
-				halftimeChange();
-				sidesChanged = true;
+			if (!sidesChanged && time > 30.0) {
+				synchronized (rightHalfLockObject) {
+					synchronized (leftHalfLockObject) {
+						halftimeChange();
+						sidesChanged = true;
+					}
+				}
 			}
 
 			PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
