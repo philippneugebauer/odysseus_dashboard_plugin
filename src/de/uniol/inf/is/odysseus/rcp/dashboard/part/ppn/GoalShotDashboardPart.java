@@ -41,8 +41,7 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 	private String title = "";
 
 	Composite footballFieldComposite;
-	Object leftHalfLockObject = new Object();
-	Object rightHalfLockObject = new Object();
+	Object lockObject = new Object();
 	List<GoalShotArea> leftHalf;
 	List<GoalShotArea> rightHalf;
 	boolean sidesChanged;
@@ -230,24 +229,17 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			final int y = (int) tuple.getAttribute(2);
 			final int time = (int) tuple.getAttribute(0);
 
-			if (!sidesChanged && time > 30.0) {
-				synchronized (rightHalfLockObject) {
-					synchronized (leftHalfLockObject) {
-						halftimeChange();
-						sidesChanged = true;
-					}
-				}
-			}
-
 			PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
 				@Override
 				public void run() {
-					if (y >= 0) {
-						synchronized (rightHalfLockObject) {
-							handleRightHalf(x, y);
+					synchronized (lockObject) {
+						if (!sidesChanged && time > 30.0) {
+							halftimeChange();
+							sidesChanged = true;
 						}
-					} else {
-						synchronized (leftHalfLockObject) {
+						if (y >= 0) {
+							handleRightHalf(x, y);
+						} else {
 							handleLeftHalf(x, y);
 						}
 					}
