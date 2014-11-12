@@ -225,6 +225,7 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			Tuple<?> tuple = (Tuple<?>) element;
 
 			// TODO: adapt for query changes
+			// FIXME: double must be possible
 			final int x = (int) tuple.getAttribute(1);
 			final int y = (int) tuple.getAttribute(2);
 			final int time = (int) tuple.getAttribute(0);
