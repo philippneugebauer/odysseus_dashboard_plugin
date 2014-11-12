@@ -56,6 +56,15 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 
 	@Override
 	public void createPartControl(Composite parent, ToolBar toolbar) {
+		footballFieldComposite = new Composite(parent, SWT.NONE);
+		GridData footballFieldGridData = new GridData(SWT.CENTER, SWT.CENTER,
+				true, true, 1, 1);
+		footballFieldGridData.widthHint = 278;
+		footballFieldGridData.heightHint = 360;
+		footballFieldComposite.setLayoutData(footballFieldGridData);
+		footballFieldComposite.setLayout(null);
+		footballFieldComposite.setBackground(Display.getCurrent()
+				.getSystemColor(SWT.COLOR_WHITE));
 		try (InputStream is = GoalShotDashboardPart.class
 				.getResourceAsStream("/soccer_field.png");) {
 
@@ -64,15 +73,6 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			final Color red = Display.getCurrent()
 					.getSystemColor(SWT.COLOR_RED);
 
-			footballFieldComposite = new Composite(parent, SWT.NONE);
-			GridData footballFieldGridData = new GridData(SWT.CENTER,
-					SWT.CENTER, true, true, 1, 1);
-			footballFieldGridData.widthHint = 278;
-			footballFieldGridData.heightHint = 360;
-			footballFieldComposite.setLayoutData(footballFieldGridData);
-			footballFieldComposite.setLayout(null);
-			footballFieldComposite.setBackground(Display.getCurrent()
-					.getSystemColor(SWT.COLOR_WHITE));
 			footballFieldComposite.setBackgroundImage(new Image(Display
 					.getDefault(), is));
 			footballFieldComposite.setBackgroundMode(SWT.INHERIT_DEFAULT);
@@ -147,7 +147,9 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 					52489, 11322, initializeLabel(yellow, 222, 294, 19, 15));
 			rightHalf.add(yellowThreeThreeArea);
 		} catch (IOException e) {
-			// TODO show error message instead?
+			Label label = new Label(footballFieldComposite, SWT.BOLD);
+			label.setText("Picture couldn't be load!");
+			label.setBounds(112, 150, 100, 20);
 		}
 	}
 
