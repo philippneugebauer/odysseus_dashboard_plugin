@@ -45,7 +45,6 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 	Object rightHalfLockObject = new Object();
 	List<GoalShotArea> leftHalf;
 	List<GoalShotArea> rightHalf;
-
 	boolean sidesChanged;
 
 	public String getTitle() {
