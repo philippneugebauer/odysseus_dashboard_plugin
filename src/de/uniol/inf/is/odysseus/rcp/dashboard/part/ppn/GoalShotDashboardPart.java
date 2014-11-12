@@ -17,6 +17,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.ToolBar;
+import org.eclipse.ui.PlatformUI;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -225,8 +226,8 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			Tuple<?> tuple = (Tuple<?>) element;
 
 			// TODO: adapt for query changes
-			int x = (int) tuple.getAttribute(6);
-			int y = (int) tuple.getAttribute(7);
+			final int x = (int) tuple.getAttribute(1);
+			final int y = (int) tuple.getAttribute(2);
 			int time = (int) tuple.getAttribute(0);
 
 			if (!sidesChanged && time > 30) {
@@ -234,15 +235,20 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 				sidesChanged = true;
 			}
 
-			if (y >= 0) {
-				synchronized (rightHalfLockObject) {
-					handleRightHalf(x, y);
+			PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					if (y >= 0) {
+						synchronized (rightHalfLockObject) {
+							handleRightHalf(x, y);
+						}
+					} else {
+						synchronized (leftHalfLockObject) {
+							handleLeftHalf(x, y);
+						}
+					}
 				}
-			} else {
-				synchronized (leftHalfLockObject) {
-					handleLeftHalf(x, y);
-				}
-			}
+			});
 		}
 	}
 
