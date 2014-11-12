@@ -148,8 +148,8 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 		} catch (IOException e) {
 			Label label = new Label(footballFieldComposite, SWT.BOLD);
 			label.setForeground(red);
-			label.setText("Picture couldn't be load!");
-			label.setBounds(112, 150, 100, 20);
+			label.setText("Picture couldn't be load! Something went wrong!");
+			label.setBounds(20, 150, 400, 20);
 		}
 	}
 
