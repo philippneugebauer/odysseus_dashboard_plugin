@@ -65,13 +65,12 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 		footballFieldComposite.setLayout(null);
 		footballFieldComposite.setBackground(Display.getCurrent()
 				.getSystemColor(SWT.COLOR_WHITE));
+		final Color red = Display.getCurrent().getSystemColor(SWT.COLOR_RED);
 		try (InputStream is = GoalShotDashboardPart.class
 				.getResourceAsStream("/soccer_field.png");) {
 
 			final Color yellow = Display.getCurrent().getSystemColor(
 					SWT.COLOR_YELLOW);
-			final Color red = Display.getCurrent()
-					.getSystemColor(SWT.COLOR_RED);
 
 			footballFieldComposite.setBackgroundImage(new Image(Display
 					.getDefault(), is));
@@ -148,6 +147,7 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			rightHalf.add(yellowThreeThreeArea);
 		} catch (IOException e) {
 			Label label = new Label(footballFieldComposite, SWT.BOLD);
+			label.setForeground(red);
 			label.setText("Picture couldn't be load!");
 			label.setBounds(112, 150, 100, 20);
 		}
