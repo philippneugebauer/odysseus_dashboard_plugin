@@ -89,21 +89,21 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 					-22633, initializeLabel(red, 43, 40, 13, 15));
 			leftHalf.add(redOneOneArea);
 			GoalShotArea yellowOneOneArea = new GoalShotArea(-50, 22644, 17463,
-					33965, initializeLabel(yellow, 216, 62, 19, 15));
+					33965, initializeLabel(yellow, 43, 62, 19, 15));
 			rightHalf.add(yellowOneOneArea);
 
 			GoalShotArea redOneTwoArea = new GoalShotArea(17463, -33960, 34976,
 					-22633, initializeLabel(red, 43, 151, 13, 15));
 			leftHalf.add(redOneTwoArea);
 			GoalShotArea yellowOneTwoArea = new GoalShotArea(17463, 22644,
-					34976, 33965, initializeLabel(yellow, 216, 173, 19, 15));
+					34976, 33965, initializeLabel(yellow, 43, 173, 19, 15));
 			rightHalf.add(yellowOneTwoArea);
 
 			GoalShotArea redOneThreeArea = new GoalShotArea(34976, -33960,
 					52489, -22633, initializeLabel(red, 43, 272, 13, 15));
 			leftHalf.add(redOneThreeArea);
 			GoalShotArea yellowOneThreeArea = new GoalShotArea(34976, 22644,
-					52489, 33965, initializeLabel(yellow, 222, 294, 19, 15));
+					52489, 33965, initializeLabel(yellow, 43, 294, 19, 15));
 			rightHalf.add(yellowOneThreeArea);
 
 			GoalShotArea redTwoOneArea = new GoalShotArea(-50, -22633, 17463,
@@ -131,21 +131,21 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 					0, initializeLabel(red, 216, 40, 13, 15));
 			leftHalf.add(redThreeOneArea);
 			GoalShotArea yellowThreeOneArea = new GoalShotArea(-50, 0, 8707,
-					11322, initializeLabel(yellow, 43, 62, 19, 15));
+					11322, initializeLabel(yellow, 216, 62, 19, 15));
 			rightHalf.add(yellowThreeOneArea);
 
 			GoalShotArea redThreeTwoArea = new GoalShotArea(17463, -11317,
 					34976, 0, initializeLabel(red, 216, 151, 13, 15));
 			leftHalf.add(redThreeTwoArea);
 			GoalShotArea yellowThreeTwoArea = new GoalShotArea(17463, 0, 34976,
-					11322, initializeLabel(yellow, 43, 173, 19, 15));
+					11322, initializeLabel(yellow, 216, 173, 19, 15));
 			rightHalf.add(yellowThreeTwoArea);
 
 			GoalShotArea redThreeThreeArea = new GoalShotArea(34976, -11317,
 					52489, 0, initializeLabel(red, 222, 272, 13, 15));
 			leftHalf.add(redThreeThreeArea);
 			GoalShotArea yellowThreeThreeArea = new GoalShotArea(34976, 0,
-					52489, 11322, initializeLabel(yellow, 43, 294, 19, 15));
+					52489, 11322, initializeLabel(yellow, 222, 294, 19, 15));
 			rightHalf.add(yellowThreeThreeArea);
 		} catch (IOException e) {
 			// TODO show error message instead?
