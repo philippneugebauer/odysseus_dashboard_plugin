@@ -273,7 +273,7 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 		for (int i = 0; i < 9; i++) {
 			GoalShotArea leftArea = leftHalf.get(i);
 			Label left = leftArea.getNumberLabel();
-			GoalShotArea rightArea = leftHalf.get(i);
+			GoalShotArea rightArea = rightHalf.get(i);
 			Label right = rightArea.getNumberLabel();
 			leftArea.setNumberLabel(right);
 			rightArea.setNumberLabel(left);
