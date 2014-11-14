@@ -2,4 +2,4 @@ bin/*
 META-INF/*
 .classpath
 .project
-bui.properties
+build.properties
