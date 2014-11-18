@@ -86,8 +86,8 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			GoalShotArea redOneOneArea = new GoalShotArea(-50, -33960, 17463,
 					-22633, initializeLabel(red, 43, 40, 13, 15));
 			leftHalf.add(redOneOneArea);
-			GoalShotArea yellowOneOneArea = new GoalShotArea(-50, 22644, 17463,
-					33965, initializeLabel(yellow, 43, 62, 19, 15));
+			GoalShotArea yellowOneOneArea = new GoalShotArea(34976, 22644,
+					52489, 33965, initializeLabel(yellow, 43, 294, 19, 15));
 			rightHalf.add(yellowOneOneArea);
 
 			GoalShotArea redOneTwoArea = new GoalShotArea(17463, -33960, 34976,
@@ -100,15 +100,15 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			GoalShotArea redOneThreeArea = new GoalShotArea(34976, -33960,
 					52489, -22633, initializeLabel(red, 43, 272, 13, 15));
 			leftHalf.add(redOneThreeArea);
-			GoalShotArea yellowOneThreeArea = new GoalShotArea(34976, 22644,
-					52489, 33965, initializeLabel(yellow, 43, 294, 19, 15));
+			GoalShotArea yellowOneThreeArea = new GoalShotArea(-50, 22644,
+					17463, 33965, initializeLabel(yellow, 43, 62, 19, 15));
 			rightHalf.add(yellowOneThreeArea);
 
 			GoalShotArea redTwoOneArea = new GoalShotArea(-50, -22633, 17463,
 					-11317, initializeLabel(red, 128, 40, 13, 15));
 			leftHalf.add(redTwoOneArea);
-			GoalShotArea yellowTwoOneArea = new GoalShotArea(-50, 11322, 17463,
-					22644, initializeLabel(yellow, 128, 62, 19, 15));
+			GoalShotArea yellowTwoOneArea = new GoalShotArea(34976, 11322,
+					52489, 22644, initializeLabel(yellow, 128, 294, 19, 15));
 			rightHalf.add(yellowTwoOneArea);
 
 			GoalShotArea redTwoTwoArea = new GoalShotArea(17463, -22633, 34976,
@@ -121,15 +121,15 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			GoalShotArea redTwoThreeArea = new GoalShotArea(34976, -22633,
 					52489, -11317, initializeLabel(red, 128, 272, 13, 15));
 			leftHalf.add(redTwoThreeArea);
-			GoalShotArea yellowTwoThreeArea = new GoalShotArea(34976, 11322,
-					52489, 22644, initializeLabel(yellow, 128, 294, 19, 15));
+			GoalShotArea yellowTwoThreeArea = new GoalShotArea(-50, 11322,
+					17463, 22644, initializeLabel(yellow, 128, 62, 19, 15));
 			rightHalf.add(yellowTwoThreeArea);
 
 			GoalShotArea redThreeOneArea = new GoalShotArea(-50, -11317, 17463,
 					0, initializeLabel(red, 216, 40, 13, 15));
 			leftHalf.add(redThreeOneArea);
-			GoalShotArea yellowThreeOneArea = new GoalShotArea(-50, 0, 8707,
-					11322, initializeLabel(yellow, 216, 62, 19, 15));
+			GoalShotArea yellowThreeOneArea = new GoalShotArea(34976, 0, 52489,
+					11322, initializeLabel(yellow, 222, 294, 19, 15));
 			rightHalf.add(yellowThreeOneArea);
 
 			GoalShotArea redThreeTwoArea = new GoalShotArea(17463, -11317,
@@ -142,8 +142,8 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 			GoalShotArea redThreeThreeArea = new GoalShotArea(34976, -11317,
 					52489, 0, initializeLabel(red, 222, 272, 13, 15));
 			leftHalf.add(redThreeThreeArea);
-			GoalShotArea yellowThreeThreeArea = new GoalShotArea(34976, 0,
-					52489, 11322, initializeLabel(yellow, 222, 294, 19, 15));
+			GoalShotArea yellowThreeThreeArea = new GoalShotArea(-50, 0, 8707,
+					11322, initializeLabel(yellow, 216, 62, 19, 15));
 			rightHalf.add(yellowThreeThreeArea);
 		} catch (IOException e) {
 			Label label = new Label(footballFieldComposite, SWT.BOLD);
@@ -225,8 +225,6 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 		if (element != null && element instanceof Tuple<?>) {
 			Tuple<?> tuple = (Tuple<?>) element;
 
-			// TODO: adapt for query changes
-			// FIXME: double must be possible
 			final int x = (int) tuple.getAttribute(1);
 			final int y = (int) tuple.getAttribute(2);
 			final int time = (int) tuple.getAttribute(0);
