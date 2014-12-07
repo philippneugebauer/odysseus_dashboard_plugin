@@ -2,6 +2,13 @@ package de.uniol.inf.is.odysseus.rcp.dashboard.part.ppn;
 
 import org.eclipse.swt.widgets.Label;
 
+/**
+ * This class represents the zones of the match field
+ * and helps to locate and count the shots in the specific zones.
+ *
+ * @author Philipp Neugebauer
+ *
+ */
 public class GoalShotArea {
 
 	private int startX;

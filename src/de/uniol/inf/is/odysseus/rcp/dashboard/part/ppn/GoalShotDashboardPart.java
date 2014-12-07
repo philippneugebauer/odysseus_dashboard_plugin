@@ -31,6 +31,14 @@ import de.uniol.inf.is.odysseus.core.physicaloperator.IPunctuation;
 import de.uniol.inf.is.odysseus.core.securitypunctuation.ISecurityPunctuation;
 import de.uniol.inf.is.odysseus.rcp.dashboard.AbstractDashboardPart;
 
+/**
+ * This class represents the dashboard for the goal shot visualization.
+ * The graphical setup and the handling of the received elements
+ * is done by this class.
+ *
+ * @author Philipp Neugebauer
+ *
+ */
 public class GoalShotDashboardPart extends AbstractDashboardPart {
 
 	private static final Logger LOG = LoggerFactory

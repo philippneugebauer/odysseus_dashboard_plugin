@@ -14,6 +14,14 @@ import de.uniol.inf.is.odysseus.core.physicaloperator.IPhysicalOperator;
 import de.uniol.inf.is.odysseus.rcp.dashboard.AbstractDashboardPartConfigurer;
 import de.uniol.inf.is.odysseus.rcp.dashboard.DashboardPartUtil;
 
+/**
+ * This class is the configuration file for the GoalShotDashboardPart.
+ * The user written title is saved by the class and given to
+ * the GoalShotDashboardPart
+ *
+ * @author Philipp Neugebauer
+ *
+ */
 public class GoalShotConfigurer extends
 		AbstractDashboardPartConfigurer<GoalShotDashboardPart> {
 
