@@ -15,36 +15,36 @@ public class GoalShotArea {
 	private int startY;
 	private int endX;
 	private int endY;
-	private Label numberLabel;
+	private Label countLabel;
 
 	public GoalShotArea(int startX, int startY, int endX, int endY, Label label) {
 		this.startX = startX;
 		this.startY = startY;
 		this.endX = endX;
 		this.endY = endY;
-		this.numberLabel = label;
+		this.countLabel = label;
 	}
 
-	public Label getNumberLabel() {
-		return numberLabel;
+	public Label getCountLabel() {
+		return countLabel;
 	}
 
-	public void setNumberLabel(Label label) {
-		this.numberLabel = label;
+	public void setCountLabel(Label label) {
+		this.countLabel = label;
 	}
 
 	public boolean isInsideAndIncrement(int x, int y) {
 		boolean isInside = startX <= x && endX > x && startY <= y && endY > y;
 		if (isInside) {
-			incrementLabelNumber();
+			incrementLabelCount();
 		}
 		return isInside;
 	}
 
-	private void incrementLabelNumber() {
+	private void incrementLabelCount() {
 		try {
-			int number = Integer.parseInt(numberLabel.getText());
-			numberLabel.setText(String.valueOf(number + 1));
+			int counter = Integer.parseInt(countLabel.getText());
+			countLabel.setText(String.valueOf(counter + 1));
 		} catch (NumberFormatException e) {
 			// do nothing
 		}

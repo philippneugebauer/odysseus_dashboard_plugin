@@ -276,11 +276,11 @@ public class GoalShotDashboardPart extends AbstractDashboardPart {
 	private void halftimeChange() {
 		for (int i = 0; i < 9; i++) {
 			GoalShotArea leftArea = leftHalf.get(i);
-			Label left = leftArea.getNumberLabel();
+			Label left = leftArea.getCountLabel();
 			GoalShotArea rightArea = rightHalf.get(i);
-			Label right = rightArea.getNumberLabel();
-			leftArea.setNumberLabel(right);
-			rightArea.setNumberLabel(left);
+			Label right = rightArea.getCountLabel();
+			leftArea.setCountLabel(right);
+			rightArea.setCountLabel(left);
 		}
 	}
 }
